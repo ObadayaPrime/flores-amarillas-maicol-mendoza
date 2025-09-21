@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas 💛</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(20, 20, 20, 0.9);
+      border: 2px solid #FFD700;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      width: 350px;
+      box-shadow: 0 0 30px #FFD700;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 15px #FFD700; }
+      to { box-shadow: 0 0 35px #FFD700; }
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin: 0 0 20px;
+      color: #FFD700;
+    }
+
+    .flowers {
+      width: 200px;
+      margin: 0 auto 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    p {
+      font-size: 14px;
+      margin: 15px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #FFD700;
+      color: #000;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #FFD700;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #FFD700;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-style: italic;
+      color: #FFD700;
+    }
+
+    .music-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #FFD700;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 15px #FFD700;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .music-btn:before {
+      content: "🎵";
+      font-size: 20px;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="music-btn" onclick="toggleMusic()"></div>
+
+  <div class="card">
+    <h1>Feliz Día de las Flores Amarillas</h1>
+    <h2>21 de Septiembre</h2>
+    <img src="https://latinflores.com/cdn/shop/files/BouquetDeDoceRosasAmarillas_39dc20ce-6b0d-464f-84b7-44b5fd52dee3.jpg?v=1746627433&width=533" alt="Ramo de flores" class="flowers">
+    <p>En este día especial, quiero que sepas...<br>
+    Eres la luz que ilumina mi vida como el amarillo de estas flores.</p>
+    <p>Dedicado para todas las Mujeres.. <br>
+     Att.  John Maicol Mendoza C.....
+    </p>
+    <a href="https://www.youtube.com/watch?v=S7gMzYqXIZc&list=RDS7gMzYqXIZc&start_radio=1" class="btn">💛 Abre Mi Corazón 💛</a>
+    <footer>Para ti, con amor</footer>
+  </div>
+
+  <audio id="song" loop>
+    <source src="Flores Amarillas - Floricienta - High Quality - J.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const song = document.getElementById("song");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        song.pause();
+      } else {
+        song.play();
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+
+</body>
+</html>
